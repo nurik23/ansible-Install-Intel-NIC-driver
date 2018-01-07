@@ -1,0 +1,13 @@
+- name: Install Intel NIC driver
+  shell: |
+    sudo apt-get install gcc
+    cd /
+    cd usr/local/src/
+    wget https://downloadmirror.intel.com/13663/eng/igb-5.3.5.12.tar.gz
+    tar zxf igb-5.3.5.12.tar.gz
+    cd igb-5.3.5.12.tar.gz/src/
+    sudo apt-get install make
+    make install
+    sudo modprobe igb
+    sudo rmmod igb
+
